@@ -1,0 +1,32 @@
+--Create an earring store database.
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, cost INTEGER, aisle INTEGER, color TEXT, type TEXT);
+
+insert into store values (1, "oranges", 6, 8, 1, "orange", "dangle");
+insert into store values (2, "strawberries", 9, 3, 1, "red", "dangle"); 
+insert into store values (3, "lemons", 8, 5, 1, "yellow", "dangle");
+insert into store values (4, "kiwis", 2, 5, 1, "green", "dangle");
+insert into store values (5, "diamond circle", 7, 437, 2, "clear", "stud");
+insert into store values (6, "large hoops", 14, 150, 3, "gold", "dangle");
+insert into store values (7, "mod square", 5, 45, 4, "leopard", "dangle");
+insert into store values (8, "mod oval", 11, 38, 4, "pink", "dangle");
+insert into store values (9, "feather", 4, 18, 4, "green", "dangle");
+insert into store values (10, "feather", 4, 18, 4, "blue", "dangle");
+insert into store values (11, "feather", 4, 18, 4, "pink", "dangle");
+insert into store values (12, "diamond square", 9, 400, 2, "clear", "stud");
+insert into store values (13, "diamond oval", 3, 325, 2, "clear", "stud");
+insert into store values (14, "small hoops", 17, 80, 3, "gold", "dangle"); 
+insert into store values (15, "mod leaf", 7, 35, 4, "green", "dangle");
+
+--Display the database ordered by price.
+
+select * from store 
+order by cost asc;
+
+--Display the cost of all items in aisle 4.
+
+select aisle, sum(cost) from store where aisle = 4; 
+
+--Show all dangle style earrings in store by color.
+
+select * from store where type = "dangle" order by color;
